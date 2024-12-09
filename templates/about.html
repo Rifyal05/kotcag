@@ -1,0 +1,36 @@
+<h1>SELAMAT DATANG {{nama}}, Sehari makan {{umur}} kali</h1>
+
+<p>daftar hewan = {{list}}</p>
+
+
+<ul>
+    {% if list %}
+    {% for nama in list %}
+    <li>{{nama}}</li>
+    {% endfor %}
+    {% else %}
+    TIDAK ADA hewan
+    {% endif %}
+
+</ul>
+
+
+{% if umur >= 20 %}
+<p>UMURNYA LEBIH atau SAMA DENGAN 20</p>
+{% else %}
+<p>umurnya kurang dari 20</p>
+{% endif %}
+
+
+
+{% for produk in produk %}
+
+<p>
+    {{produk.nama}} {{produk.harga}}
+    {% if produk.stock %}
+    TERSEDIA
+    {% else %}
+    KOSONG
+    {% endif %}
+</p>
+{% endfor %}
